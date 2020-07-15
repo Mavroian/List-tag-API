@@ -1,0 +1,21 @@
+
+<% const listings = locals.data _%>
+<div >
+  <table style="width:90%; margin:0 auto" class="table table-dark">
+    <tr>
+       <th scope="col">Id</th>
+       <th scope="col">Name</th>
+       <th scope="col">City</th>
+       <th scope="col">Price</th>
+    </tr>
+    <% for (var i = 0; i < listings.length; i++) { %>
+      <tr class="tag-results" scope="row">
+        <td><%= listings[i].Listing.Id %> </td>
+        <td><%= listings[i].Listing.Title %> </td>
+        <td id="town-search"><%= listings[i].Listing.Address.Town %></td>
+        <td><%= listings[i].Listing.Price.Price %></td>
+     </tr>
+    <% } %>
+
+ </table>
+</div>

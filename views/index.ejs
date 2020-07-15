@@ -1,0 +1,49 @@
+<% const tags = locals.tags _%>
+<div class="jumbotron jumbotron-fluid">
+  <h1 style=" text-align:center; margin-bottom:4rem"><%= title %></h1>
+  <div class="container" style="height: 100vh;">
+    <div class="dropdown-button-container" style="position: relative;">
+      <div class="dropdown-buttons" 
+      style="
+        position: absolute;
+        top: -44px;
+        left: 50%;
+        transform: translate(-50%, 0px);
+      ">
+        <div class="btn-group">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select Tag
+          </button>
+          <div class="dropdown-menu dropdown-menu-1">
+            <% for (var i = 0; i < tags.length; i++) { %>
+              <a class="dropdown-item" href="#"><%= tags[i] %></a>
+            <% } %>
+          </div>
+        </div>
+        <% if(locals.towns) { %>
+          <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select Town
+            </button>
+            <div class="dropdown-menu dropdown-menu-2">
+              <% for (var i = 0; i < towns.length; i++) { %>
+                <a class="dropdown-item" href="#"><%= towns[i] %></a>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+    
+    <% if( locals.data ){ %>
+      <%- include('tag'); %>
+    <% }  %> 
+  </div>
+</div>
+
+  
+
+
+
+ 
+  
